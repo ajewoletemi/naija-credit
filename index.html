@@ -47,7 +47,6 @@
       overflow-x: hidden;
     }
 
-    /* Header */
     .header {
       background: linear-gradient(135deg, #a8e063 0%, #f9d423 100%);
       padding: 16px 20px 24px;
@@ -59,7 +58,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     .logo {
@@ -104,11 +103,11 @@
       border-radius: 4px;
     }
 
-    /* Screens */
     .screen {
       display: none;
       padding: 20px;
       animation: fadeIn 0.35s ease;
+      padding-bottom: 100px;
     }
 
     .screen.active {
@@ -120,7 +119,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Landing */
     .hero-card {
       background: white;
       border-radius: 24px;
@@ -237,7 +235,6 @@
       margin-bottom: 20px;
     }
 
-    /* Forms */
     .form-group {
       margin-bottom: 18px;
     }
@@ -277,7 +274,12 @@
       gap: 12px;
     }
 
-    /* Buttons */
+    .form-row-3 {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 10px;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -321,7 +323,6 @@
       color: #1a1a1a;
     }
 
-    /* Offer Card */
     .offer-card {
       background: white;
       border-radius: 20px;
@@ -363,7 +364,6 @@
       border-bottom: none;
     }
 
-    /* Virtual Card */
     .virtual-card {
       background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
       border-radius: 20px;
@@ -427,7 +427,6 @@
       margin-bottom: 2px;
     }
 
-    /* Dashboard */
     .dash-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -441,6 +440,7 @@
       padding: 16px;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      cursor: pointer;
     }
 
     .dash-item .icon {
@@ -465,7 +465,6 @@
       font-size: 0.95rem;
     }
 
-    /* Terms page */
     .terms-content {
       background: white;
       border-radius: 16px;
@@ -491,7 +490,6 @@
       margin-bottom: 12px;
     }
 
-    /* Progress bar */
     .progress-bar {
       height: 4px;
       background: #e5e7eb;
@@ -506,7 +504,6 @@
       transition: width 0.4s ease;
     }
 
-    /* Footer nav */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -541,7 +538,6 @@
       margin-bottom: 2px;
     }
 
-    /* Utility */
     .hidden { display: none !important; }
     .mt-12 { margin-top: 12px; }
     .mt-20 { margin-top: 20px; }
@@ -549,9 +545,6 @@
     .text-center { text-align: center; }
     .text-sm { font-size: 0.85rem; }
     .text-gray { color: var(--gray); }
-    .flex { display: flex; }
-    .gap-8 { gap: 8px; }
-    .w-full { width: 100%; }
 
     .notice {
       background: #fefce8;
@@ -626,14 +619,139 @@
       height: 18px;
       accent-color: var(--primary-dark);
     }
+
+    /* Withdrawal & Bill styles */
+    .method-card {
+      background: white;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .method-card:hover, .method-card.selected {
+      border-color: var(--primary-dark);
+      background: #f0fdf4;
+    }
+
+    .method-card .method-icon {
+      width: 44px;
+      height: 44px;
+      background: #f0fdf4;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .method-card .method-info h4 {
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .method-card .method-info p {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .req-list {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 16px 0;
+      font-size: 0.85rem;
+    }
+
+    .req-list h4 {
+      margin-bottom: 10px;
+      color: #9a3412;
+    }
+
+    .req-list ul {
+      padding-left: 18px;
+      color: #9a3412;
+    }
+
+    .req-list li {
+      margin-bottom: 6px;
+    }
+
+    .bill-item {
+      background: white;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .bill-item .bill-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .bill-item .bill-amount {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .status-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+
+    .status-paid {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .status-pending {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .contact-card h3 {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-card p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .contact-card a {
+      color: #166534;
+      font-weight: 600;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
   <div class="app-container">
-    <!-- Loading -->
     <div class="loading-overlay" id="loading">
       <div class="spinner"></div>
-      <div style="font-weight:600">Processing your application...</div>
+      <div style="font-weight:600" id="loadingText">Processing...</div>
     </div>
 
     <!-- ========== SCREEN 0: LANDING ========== -->
@@ -689,10 +807,6 @@
             <button class="btn btn-primary" onclick="goToStep(1)">APPLY NOW</button>
           </div>
         </div>
-
-        <div class="notice">
-          This is a demonstration web application for educational and prototype purposes. It does not provide real credit facilities.
-        </div>
       </div>
     </div>
 
@@ -731,11 +845,36 @@
           <label>Email Address</label>
           <input type="email" id="email" placeholder="you@email.com" />
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Date of Birth</label>
-            <input type="date" id="dob" />
+
+        <!-- Easy Date of Birth selectors -->
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <div class="form-row-3">
+            <select id="dobDay">
+              <option value="">Day</option>
+            </select>
+            <select id="dobMonth">
+              <option value="">Month</option>
+              <option value="01">January</option>
+              <option value="02">February</option>
+              <option value="03">March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <select id="dobYear">
+              <option value="">Year</option>
+            </select>
           </div>
+        </div>
+
+        <div class="form-row">
           <div class="form-group">
             <label>Gender</label>
             <select id="gender">
@@ -745,20 +884,24 @@
               <option>Prefer not to say</option>
             </select>
           </div>
+          <div class="form-group">
+            <label>State of Residence</label>
+            <select id="state">
+              <option value="">Select State</option>
+              <option>Lagos</option><option>Abuja (FCT)</option><option>Rivers</option>
+              <option>Kano</option><option>Oyo</option><option>Kaduna</option>
+              <option>Enugu</option><option>Delta</option><option>Anambra</option>
+              <option>Ogun</option><option>Akwa Ibom</option><option>Edo</option>
+              <option>Imo</option><option>Ondo</option><option>Osun</option>
+              <option>Kwara</option><option>Benue</option><option>Plateau</option>
+              <option>Other</option>
+            </select>
+          </div>
         </div>
+
         <div class="form-group">
           <label>Residential Address</label>
-          <textarea id="address" rows="2" placeholder="Street, City, State"></textarea>
-        </div>
-        <div class="form-group">
-          <label>State of Residence</label>
-          <select id="state">
-            <option value="">Select State</option>
-            <option>Lagos</option><option>Abuja (FCT)</option><option>Rivers</option>
-            <option>Kano</option><option>Oyo</option><option>Kaduna</option>
-            <option>Enugu</option><option>Delta</option><option>Anambra</option>
-            <option>Ogun</option><option>Other</option>
-          </select>
+          <textarea id="address" rows="2" placeholder="Street, City, LGA"></textarea>
         </div>
 
         <button class="btn btn-primary mt-12" onclick="goToStep(2)">Continue</button>
@@ -801,9 +944,36 @@
           <label>Preferred Bank for Disbursement</label>
           <select id="bank">
             <option value="">Select Bank</option>
-            <option>Access Bank</option><option>GTBank</option><option>Zenith Bank</option>
-            <option>First Bank</option><option>UBA</option><option>Stanbic IBTC</option>
-            <option>Fidelity Bank</option><option>Union Bank</option><option>Other</option>
+            <option>Access Bank</option>
+            <option>Citibank Nigeria</option>
+            <option>Ecobank Nigeria</option>
+            <option>Fidelity Bank</option>
+            <option>First Bank of Nigeria</option>
+            <option>First City Monument Bank (FCMB)</option>
+            <option>Globus Bank</option>
+            <option>Guaranty Trust Bank (GTBank)</option>
+            <option>Heritage Bank</option>
+            <option>Jaiz Bank</option>
+            <option>Keystone Bank</option>
+            <option>Polaris Bank</option>
+            <option>Providus Bank</option>
+            <option>Stanbic IBTC Bank</option>
+            <option>Standard Chartered Bank</option>
+            <option>Sterling Bank</option>
+            <option>SunTrust Bank</option>
+            <option>Titan Trust Bank</option>
+            <option>Union Bank of Nigeria</option>
+            <option>United Bank for Africa (UBA)</option>
+            <option>Unity Bank</option>
+            <option>Wema Bank</option>
+            <option>Zenith Bank</option>
+            <option>Kuda Bank</option>
+            <option>Opay</option>
+            <option>PalmPay</option>
+            <option>Moniepoint</option>
+            <option>Carbon</option>
+            <option>FairMoney</option>
+            <option>Other</option>
           </select>
         </div>
         <div class="form-group">
@@ -976,12 +1146,12 @@
             <div class="label">Available</div>
             <div class="value" id="availableCredit">₦250,000</div>
           </div>
-          <div class="dash-item">
+          <div class="dash-item" onclick="goToStep(8)">
             <div class="icon">📅</div>
             <div class="label">Next Due</div>
             <div class="value">—</div>
           </div>
-          <div class="dash-item">
+          <div class="dash-item" onclick="goToStep(8)">
             <div class="icon">📄</div>
             <div class="label">Statements</div>
             <div class="value">View</div>
@@ -993,15 +1163,13 @@
           </div>
         </div>
 
-        <button class="btn btn-primary" onclick="alert('In a live system this would initiate a withdrawal request to your linked bank account after final acceptance and verification.')">Withdraw Now</button>
+        <button class="btn btn-primary" onclick="goToStep(7)">Withdraw Now</button>
 
         <div class="export-box">
           <strong>Share Application Summary</strong>
-          <p style="margin:8px 0 12px;font-size:0.85rem">Generate a structured summary you can send to other financial institutions or keep for your records.</p>
+          <p style="margin:8px 0 12px;font-size:0.85rem">Generate a structured summary you can send to other financial institutions.</p>
           <button class="btn btn-dark" style="padding:12px" onclick="exportSummary()">Download / Share Summary</button>
         </div>
-
-        <button class="btn btn-secondary mt-12" onclick="showTerms()">View Terms & Conditions</button>
       </div>
     </div>
 
@@ -1021,10 +1189,10 @@
         <h2 style="margin-bottom:12px">Terms & Conditions</h2>
         <div class="terms-content">
           <p><strong>Last Updated: November 2026</strong></p>
-          <p>These Terms govern the use of the NaijaLink Credit demonstration platform. By proceeding you acknowledge that you have read and understood them.</p>
+          <p>These Terms govern the use of the NaijaLink Credit demonstration platform.</p>
 
           <h3>1. Nature of Service</h3>
-          <p>NaijaLink Credit is presented as a demonstration of a digital credit application flow designed for the Nigerian market. It illustrates typical features of virtual credit products including application, assessment simulation, and virtual card presentation.</p>
+          <p>NaijaLink Credit demonstrates a digital credit application flow designed for the Nigerian market, including application, assessment simulation, and virtual card presentation.</p>
 
           <h3>2. Eligibility</h3>
           <ul>
@@ -1035,59 +1203,208 @@
 
           <h3>3. Credit Assessment & Offer</h3>
           <ul>
-            <li>Any credit limit shown is the result of a simulated assessment based on the data you enter.</li>
+            <li>Any credit limit shown is the result of a simulated assessment.</li>
             <li>In a regulated product, the lender must assess capacity to repay before granting credit (FCCPC DEON Regulations 2025).</li>
-            <li>Credit is provided only on an explicit opt-in basis. Automatic or pre-authorised lending is not permitted under Nigerian digital lending rules.</li>
+            <li>Credit is provided only on an explicit opt-in basis.</li>
           </ul>
 
           <h3>4. Pricing & Transparency</h3>
           <ul>
             <li>Interest rates, fees, total cost of credit and repayment schedule must be clearly disclosed before acceptance.</li>
-            <li>Sample daily interest illustration used in this demo: up to 0.08% per day (indicative maximum APR illustration ≈ 29.2%). Actual rates in a live product would be set by the licensed lender and fully disclosed.</li>
-            <li>No hidden charges. All applicable fees must be shown before you confirm.</li>
+            <li>Sample daily interest illustration: up to 0.08% per day (indicative max APR ≈ 29.2%).</li>
           </ul>
 
           <h3>5. Data Protection</h3>
           <ul>
-            <li>Personal data is handled in accordance with the Nigeria Data Protection Act 2023 and the Nigeria Data Protection Regulation.</li>
-            <li>Data collected is used only for the purpose of the demonstration and is stored locally in your browser (localStorage) for the session.</li>
-            <li>In a live regulated service, BVN/NIN verification, credit bureau checks, and data sharing would require explicit consent and lawful basis.</li>
+            <li>Personal data is handled in accordance with the Nigeria Data Protection Act 2023.</li>
+            <li>Data is stored locally in your browser for the session only.</li>
           </ul>
 
           <h3>6. Debt Recovery</h3>
-          <p>Any real lending product operating in Nigeria must recover debts only through lawful means. Harassment, public shaming, contacting third parties from a borrower’s phone book, or other prohibited practices are not allowed under FCCPC rules.</p>
+          <p>Any real lending product must recover debts only through lawful means. Harassment or contacting third parties from a borrower’s phone book is prohibited under FCCPC rules.</p>
 
-          <h3>7. Complaints</h3>
-          <p>In a live service, complaints must be acknowledged within 24 hours and resolved within the timelines prescribed by the FCCPC (generally 24–48 hours where practicable). Unresolved complaints may be escalated to the FCCPC.</p>
-
-          <h3>8. Regulatory Context</h3>
-          <p>Digital consumer lending in Nigeria is regulated by the Federal Competition and Consumer Protection Commission (FCCPC) under the DEON Regulations 2025, state Money Lenders Laws, and, where applicable, the Central Bank of Nigeria. A live product requires the appropriate licences and FCCPC approval of the lending application/platform.</p>
-
-          <h3>9. Limitation</h3>
-          <p>This demonstration does not create any lender–borrower relationship and does not constitute an offer of credit by any licensed financial institution.</p>
-
-          <h3>10. Contact</h3>
-          <p>For questions about this demonstration: support@naijalink-demo.example</p>
+          <h3>7. Regulatory Context</h3>
+          <p>Digital consumer lending in Nigeria is regulated by the FCCPC under the DEON Regulations 2025, state Money Lenders Laws, and where applicable the Central Bank of Nigeria.</p>
         </div>
         <button class="btn btn-primary mt-20" onclick="goToStep(5)">Back to Dashboard</button>
       </div>
     </div>
 
-    <!-- Bottom Nav (visible on dashboard) -->
+    <!-- ========== SCREEN 7: WITHDRAWAL METHOD ========== -->
+    <div class="screen" id="screen-7">
+      <div class="header" style="padding-bottom:12px">
+        <div class="header-top">
+          <div class="logo">
+            <div class="logo-icon">N</div>
+            <span>NaijaLink</span>
+          </div>
+          <span style="font-size:0.85rem;font-weight:600;cursor:pointer" onclick="goToStep(5)">✕</span>
+        </div>
+      </div>
+
+      <div style="padding:16px 20px 100px">
+        <h2 style="margin-bottom:4px">Withdraw Funds</h2>
+        <p class="text-gray text-sm mb-8">Choose how you want to receive your funds</p>
+
+        <div class="method-card selected" onclick="selectMethod(this)">
+          <div class="method-icon">🏦</div>
+          <div class="method-info">
+            <h4>Bank Transfer</h4>
+            <p>Direct to your linked Nigerian bank account</p>
+          </div>
+        </div>
+
+        <div class="method-card" onclick="selectMethod(this)">
+          <div class="method-icon">📱</div>
+          <div class="method-info">
+            <h4>Mobile Money / Wallet</h4>
+            <p>Opay, PalmPay, Kuda, Moniepoint etc.</p>
+          </div>
+        </div>
+
+        <div class="method-card" onclick="selectMethod(this)">
+          <div class="method-icon">💳</div>
+          <div class="method-info">
+            <h4>Virtual Card Spend</h4>
+            <p>Use the virtual card for online / POS payments</p>
+          </div>
+        </div>
+
+        <div class="form-group mt-20">
+          <label>Amount to Withdraw (₦)</label>
+          <input type="number" id="withdrawAmount" placeholder="Enter amount" max="400000" />
+        </div>
+
+        <div class="req-list">
+          <h4>Requirements for Live Withdrawals</h4>
+          <ul>
+            <li>Valid BVN and NIN successfully verified</li>
+            <li>Account name must match BVN name</li>
+            <li>Active bank account or licensed mobile money wallet</li>
+            <li>Successful KYC level (Tier 1 or higher)</li>
+            <li>No outstanding overdue payments</li>
+            <li>In a live system: integration with payment gateway / NIBSS / bank API</li>
+            <li>FCCPC-approved lending licence + CBN/money-lender licence</li>
+          </ul>
+        </div>
+
+        <button class="btn btn-primary" onclick="confirmWithdraw()">Continue</button>
+        <button class="btn btn-secondary mt-12" onclick="goToStep(5)">Cancel</button>
+      </div>
+    </div>
+
+    <!-- ========== SCREEN 8: CREDIT BILL ========== -->
+    <div class="screen" id="screen-8">
+      <div class="header" style="padding-bottom:12px">
+        <div class="header-top">
+          <div class="logo">
+            <div class="logo-icon">N</div>
+            <span>NaijaLink</span>
+          </div>
+          <span style="font-size:0.85rem;font-weight:600">Credit Bill</span>
+        </div>
+      </div>
+
+      <div style="padding:16px 20px 100px">
+        <h2 style="margin-bottom:16px">Your Statements</h2>
+
+        <div class="bill-item">
+          <div class="bill-header">
+            <div>
+              <strong>Current Cycle</strong>
+              <div class="text-sm text-gray">01 Nov – 30 Nov 2026</div>
+            </div>
+            <span class="status-badge status-pending">Pending</span>
+          </div>
+          <div class="bill-amount">₦0.00</div>
+          <div class="text-sm text-gray">No active utilisation yet</div>
+        </div>
+
+        <div class="bill-item">
+          <div class="bill-header">
+            <div>
+              <strong>Previous Statement</strong>
+              <div class="text-sm text-gray">01 Oct – 31 Oct 2026</div>
+            </div>
+            <span class="status-badge status-paid">Paid</span>
+          </div>
+          <div class="bill-amount">₦0.00</div>
+          <div class="text-sm text-gray">No transactions</div>
+        </div>
+
+        <div class="export-box">
+          <p style="margin-bottom:10px">Need a formal statement for another institution?</p>
+          <button class="btn btn-dark" style="padding:12px" onclick="exportSummary()">Download Statement Summary</button>
+        </div>
+
+        <button class="btn btn-secondary mt-20" onclick="goToStep(5)">Back to Home</button>
+      </div>
+    </div>
+
+    <!-- ========== SCREEN 9: CONTACT US ========== -->
+    <div class="screen" id="screen-9">
+      <div class="header" style="padding-bottom:12px">
+        <div class="header-top">
+          <div class="logo">
+            <div class="logo-icon">N</div>
+            <span>NaijaLink</span>
+          </div>
+          <span style="font-size:0.85rem;font-weight:600">Contact Us</span>
+        </div>
+      </div>
+
+      <div style="padding:16px 20px 100px">
+        <h2 style="margin-bottom:16px">Get Help</h2>
+
+        <div class="contact-card">
+          <h3>📞 Customer Support</h3>
+          <p>Available 8am – 8pm (Mon – Sat)</p>
+          <p><a href="tel:+2348000000000">+234 800 000 0000</a></p>
+        </div>
+
+        <div class="contact-card">
+          <h3>✉️ Email</h3>
+          <p>We respond within 24 hours</p>
+          <p><a href="mailto:support@naijalink-demo.example">support@naijalink-demo.example</a></p>
+        </div>
+
+        <div class="contact-card">
+          <h3>💬 WhatsApp</h3>
+          <p>Quick support via chat</p>
+          <p><a href="#">Chat on WhatsApp</a></p>
+        </div>
+
+        <div class="contact-card">
+          <h3>🏢 Office</h3>
+          <p>Lagos, Nigeria</p>
+          <p class="text-sm text-gray">For formal correspondence and regulatory enquiries</p>
+        </div>
+
+        <div class="form-group mt-20">
+          <label>Send us a message</label>
+          <textarea id="contactMessage" rows="4" placeholder="Describe your issue or question..."></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="alert('Message received (demo only). In a live system this would be sent to support.')">Send Message</button>
+
+        <button class="btn btn-secondary mt-12" onclick="goToStep(5)">Back to Home</button>
+      </div>
+    </div>
+
+    <!-- Bottom Nav -->
     <div class="bottom-nav hidden" id="bottomNav">
-      <div class="nav-item active" onclick="goToStep(5)">
+      <div class="nav-item active" id="nav-home" onclick="goToStep(5); setActiveNav('home')">
         <span class="nav-icon">🏠</span>
         Home
       </div>
-      <div class="nav-item" onclick="alert('Credit Bill view – demo only')">
+      <div class="nav-item" id="nav-bill" onclick="goToStep(8); setActiveNav('bill')">
         <span class="nav-icon">📄</span>
         Credit Bill
       </div>
-      <div class="nav-item" onclick="alert('Contact support – demo only')">
+      <div class="nav-item" id="nav-contact" onclick="goToStep(9); setActiveNav('contact')">
         <span class="nav-icon">💬</span>
         Contact Us
       </div>
-      <div class="nav-item" onclick="showTerms()">
+      <div class="nav-item" id="nav-terms" onclick="goToStep(6); setActiveNav('terms')">
         <span class="nav-icon">📋</span>
         Terms
       </div>
@@ -1095,52 +1412,69 @@
   </div>
 
   <script>
-    // Application state
     let appData = {
-      fullName: '',
-      phone: '',
-      email: '',
-      dob: '',
-      gender: '',
-      address: '',
-      state: '',
-      bvn: '',
-      nin: '',
-      bank: '',
-      accountNo: '',
-      accountName: '',
-      employment: '',
-      income: 0,
-      obligations: 0,
-      requested: 0,
-      tenure: 180,
-      approvedLimit: 0,
-      interestDaily: 0.0008
+      fullName: '', phone: '', email: '', dob: '', gender: '', address: '', state: '',
+      bvn: '', nin: '', bank: '', accountNo: '', accountName: '',
+      employment: '', income: 0, obligations: 0, requested: 0, tenure: 180,
+      approvedLimit: 0
     };
+
+    // Populate Day and Year selectors
+    (function initDateSelectors() {
+      const daySelect = document.getElementById('dobDay');
+      for (let i = 1; i <= 31; i++) {
+        const opt = document.createElement('option');
+        opt.value = i.toString().padStart(2, '0');
+        opt.textContent = i;
+        daySelect.appendChild(opt);
+      }
+      const yearSelect = document.getElementById('dobYear');
+      const currentYear = new Date().getFullYear();
+      for (let y = currentYear - 18; y >= currentYear - 70; y--) {
+        const opt = document.createElement('option');
+        opt.value = y;
+        opt.textContent = y;
+        yearSelect.appendChild(opt);
+      }
+    })();
 
     function goToStep(step) {
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById('screen-' + step).classList.add('active');
       window.scrollTo(0, 0);
 
-      // Show bottom nav only on dashboard
       const nav = document.getElementById('bottomNav');
-      if (step === 5) {
+      if ([5, 6, 7, 8, 9].includes(step)) {
         nav.classList.remove('hidden');
       } else {
         nav.classList.add('hidden');
       }
     }
 
+    function setActiveNav(which) {
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      const map = { home: 'nav-home', bill: 'nav-bill', contact: 'nav-contact', terms: 'nav-terms' };
+      if (map[which]) document.getElementById(map[which]).classList.add('active');
+    }
+
     function showTerms() {
       goToStep(6);
+      setActiveNav('terms');
+    }
+
+    function selectMethod(el) {
+      document.querySelectorAll('.method-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
     }
 
     function collectFormData() {
       appData.fullName = document.getElementById('fullName')?.value || '';
       appData.phone = document.getElementById('phone')?.value || '';
       appData.email = document.getElementById('email')?.value || '';
-      appData.dob = document.getElementById('dob')?.value || '';
+      const d = document.getElementById('dobDay')?.value;
+      const m = document.getElementById('dobMonth')?.value;
+      const y = document.getElementById('dobYear')?.value;
+      appData.dob = (d && m && y) ? `${y}-${m}-${d}` : '';
       appData.gender = document.getElementById('gender')?.value || '';
       appData.address = document.getElementById('address')?.value || '';
       appData.state = document.getElementById('state')?.value || '';
@@ -1159,10 +1493,9 @@
     function calculateLimit() {
       collectFormData();
       let base = Math.min(appData.requested || 200000, 400000);
-      // Simple simulation
       const disposable = Math.max(0, (appData.income * 0.4) - appData.obligations);
       let limit = Math.min(base, disposable * 3, 400000);
-      if (limit < 10000) limit = 25000; // minimum demo offer
+      if (limit < 10000) limit = 25000;
       if (appData.employment === 'Unemployed' || appData.employment === 'Student') {
         limit = Math.min(limit, 50000);
       }
@@ -1181,28 +1514,24 @@
         return;
       }
 
+      document.getElementById('loadingText').textContent = 'Processing your application...';
       document.getElementById('loading').classList.add('show');
 
       setTimeout(() => {
         const limit = calculateLimit();
         document.getElementById('approvedAmount').textContent = '₦' + limit.toLocaleString();
         document.getElementById('offerTenure').textContent = appData.tenure + ' days';
-
-        // Simple total payable illustration
-        const dailyRate = 0.0008;
-        const interest = limit * dailyRate * appData.tenure;
-        const total = Math.round(limit + interest);
-        document.getElementById('totalPayable').textContent = '₦' + total.toLocaleString();
-
+        const interest = limit * 0.0008 * appData.tenure;
+        document.getElementById('totalPayable').textContent = '₦' + Math.round(limit + interest).toLocaleString();
         document.getElementById('loading').classList.remove('show');
         goToStep(4);
       }, 1800);
     }
 
     function acceptOffer() {
+      document.getElementById('loadingText').textContent = 'Activating your card...';
       document.getElementById('loading').classList.add('show');
       setTimeout(() => {
-        // Populate card
         const nameParts = (appData.fullName || 'CARD HOLDER').toUpperCase().split(' ');
         const displayName = nameParts.length > 1 
           ? nameParts[0] + ' ' + nameParts[nameParts.length-1][0] + '.'
@@ -1211,32 +1540,39 @@
         document.getElementById('cardLimit').textContent = '₦' + appData.approvedLimit.toLocaleString();
         document.getElementById('availableCredit').textContent = '₦' + appData.approvedLimit.toLocaleString();
         document.getElementById('userGreeting').textContent = 'Hi, ' + (nameParts[0] || 'User');
-
-        // Generate fake card number ending
         const last4 = String(Math.floor(1000 + Math.random() * 9000));
         document.getElementById('cardNumber').textContent = '••••  ••••  ••••  ' + last4;
-
-        // Expiry ~2 years
         const now = new Date();
         const exp = (now.getMonth() + 1).toString().padStart(2, '0') + '/' + (now.getFullYear() + 2).toString().slice(-2);
         document.getElementById('cardExpiry').textContent = exp;
-
-        // Persist lightly
-        try {
-          localStorage.setItem('naijalink_demo', JSON.stringify(appData));
-        } catch(e) {}
-
+        try { localStorage.setItem('naijalink_demo', JSON.stringify(appData)); } catch(e) {}
         document.getElementById('loading').classList.remove('show');
         goToStep(5);
+        setActiveNav('home');
       }, 1200);
+    }
+
+    function confirmWithdraw() {
+      const amount = document.getElementById('withdrawAmount').value;
+      if (!amount || amount <= 0) {
+        alert('Please enter a valid amount to withdraw.');
+        return;
+      }
+      document.getElementById('loadingText').textContent = 'Processing withdrawal request...';
+      document.getElementById('loading').classList.add('show');
+      setTimeout(() => {
+        document.getElementById('loading').classList.remove('show');
+        alert('Withdrawal request of ₦' + Number(amount).toLocaleString() + ' received (demo mode).\n\nIn a live system this would be processed after final verification and sent to your selected method.');
+        goToStep(5);
+        setActiveNav('home');
+      }, 1500);
     }
 
     function exportSummary() {
       collectFormData();
       const limit = appData.approvedLimit || calculateLimit();
-      const summary = `
-NAIJALINK CREDIT – APPLICATION SUMMARY
-=======================================
+      const summary = `NAIJALINK CREDIT – APPLICATION / STATEMENT SUMMARY
+===============================================
 Generated: ${new Date().toLocaleString('en-NG')}
 
 APPLICANT DETAILS
@@ -1272,49 +1608,25 @@ Indicative Daily Interest: 0.08%
 Indicative Max APR: ~29.2%
 Tenure: ${appData.tenure} days
 
-NOTES
------
-This summary was generated from the NaijaLink Credit demonstration web application.
-It is intended for educational, prototype, or sharing purposes with other financial institutions.
-It does not constitute a formal credit agreement or offer of credit by a licensed lender.
+This summary was generated from the NaijaLink Credit demonstration.
+It can be shared with other financial institutions for reference.`;
 
-For regulated digital lending in Nigeria, operators require:
-- Appropriate state money-lender licence (or CBN licence where applicable)
-- FCCPC approval under the DEON Consumer Lending Regulations 2025
-- Compliance with the Nigeria Data Protection Act 2023
-`.trim();
-
-      // Create downloadable file
       const blob = new Blob([summary], { type: 'text/plain' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'NaijaLink_Credit_Application_Summary.txt';
+      a.download = 'NaijaLink_Credit_Summary.txt';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-
-      // Also offer copy
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(summary).then(() => {
-          alert('Summary downloaded and also copied to clipboard. You can paste it into an email or messaging app to send to a financial institution.');
-        }).catch(() => {
-          alert('Summary downloaded successfully.');
-        });
-      } else {
-        alert('Summary downloaded successfully.');
-      }
+      alert('Summary downloaded. You can also copy it from the file and send it to any financial institution.');
     }
 
-    // Restore previous session if any
     window.addEventListener('load', () => {
       try {
         const saved = localStorage.getItem('naijalink_demo');
-        if (saved) {
-          const data = JSON.parse(saved);
-          Object.assign(appData, data);
-        }
+        if (saved) Object.assign(appData, JSON.parse(saved));
       } catch(e) {}
     });
   </script>
